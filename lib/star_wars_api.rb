@@ -5,16 +5,15 @@ require 'httparty'
 
 class StarWarsAPI
     def initialize
-        @url= https://swapi.dev/api/
+        @url= "https://swapi.dev/api/"
     end
     #API for my star wars characters (doesn't have as many as I'd like ) :(
 
-    def get_sw_http
-        uri= URI(@url)
-        response= NET::HTTP.get(uri)
+    def get_sw_http(url)
+        uri= URI(url)
+        response= Net::HTTP.get(uri)
         data= JSON.parse(response)
-        binding.pry
-        characters= data["results"]
+        #binding.pry
     end 
 
     def get_sw_httparty
