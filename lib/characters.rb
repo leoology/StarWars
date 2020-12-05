@@ -105,5 +105,13 @@ class Character
        puts "Height: #{jedi['height']}"
        puts "Gender: #{jedi['gender']}" 
    end   
+
+   def maul
+    jedi= StarWarsAPI.new.get_sw_http(url(44))
+    puts "Name: #{jedi['name']}"
+   puts "Born: #{jedi['birth_year']}"
+   puts "Height: #{jedi['height']}"
+   puts "Gender: #{jedi['gender']}" 
+end
 end
 Character.new.list_character

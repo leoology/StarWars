@@ -3,6 +3,12 @@ require 'colorize'
 require 'area'
 
 class CommandLineInterface
+
+    def interface
+        menu
+        goodbye
+    end 
+
     def menu
         @characters = Character.list_characters
         puts "Enter the number of the character on which you'd like more info."
@@ -49,7 +55,7 @@ class CommandLineInterface
             puts "1. Luke Skywalker"
             puts "2. Darth Vader"
             puts "3. Yoda"
-            puts "4. CHewbacca"
+            puts "4. Chewbacca"
             puts "5. Obi-Wan Kenobi"
             puts "6. Han Solo"
             puts "7. General Grievous"
@@ -57,5 +63,8 @@ class CommandLineInterface
             puts "9. Qui-Gon Jinn"
             puts "10. Darth Maul "
         end
+
+        def goodbye
+            puts "Thank you for stopping by our edge of the galaxy. May the force be with you."
     end
  
