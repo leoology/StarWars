@@ -30,8 +30,7 @@ class Character
         puts "Name: #{jedi['name']}"
         puts "Born: #{jedi['birth_year']}"
         puts "Height: #{jedi['height']}"
-        puts "Gender: #{jedi['gender']}"
-        binding.pry 
+        puts "Gender: #{jedi['gender']}" 
     end
 
     def darth_vader
@@ -68,7 +67,7 @@ class Character
 
     def han_solo
         jedi= StarWarsAPI.new.get_sw_http(url(14))
-         puts "Name: #{jedi['name']}"
+        puts "Name: #{jedi['name']}"
         puts "Born: #{jedi['birth_year']}"
         puts "Height: #{jedi['height']}"
         puts "Gender: #{jedi['gender']}" 
@@ -76,7 +75,7 @@ class Character
 
     def grievous
         jedi= StarWarsAPI.new.get_sw_http(url(79))
-         puts "Name: #{jedi['name']}"
+        puts "Name: #{jedi['name']}"
         puts "Born: #{jedi['birth_year']}"
         puts "Height: #{jedi['height']}"
         puts "Gender: #{jedi['gender']}" 
@@ -84,7 +83,7 @@ class Character
 
     def annie
         jedi= StarWarsAPI.new.get_sw_http(url(11))
-         puts "Name: #{jedi['name']}"
+        puts "Name: #{jedi['name']}"
         puts "Born: #{jedi['birth_year']}"
         puts "Height: #{jedi['height']}"
         puts "Gender: #{jedi['gender']}" 
@@ -92,7 +91,7 @@ class Character
 
     def darth_vader
         jedi= StarWarsAPI.new.get_sw_http(url(4))
-         puts "Name: #{jedi['name']}"
+        puts "Name: #{jedi['name']}"
         puts "Born: #{jedi['birth_year']}"
         puts "Height: #{jedi['height']}"
         puts "Gender: #{jedi['gender']}" 
@@ -101,17 +100,17 @@ class Character
     def man_who_got_skunked_by_darth_maul
         jedi= StarWarsAPI.new.get_sw_http(url(11))
         puts "Name: #{jedi['name']}"
-       puts "Born: #{jedi['birth_year']}"
-       puts "Height: #{jedi['height']}"
-       puts "Gender: #{jedi['gender']}" 
+        puts "Born: #{jedi['birth_year']}"
+        puts "Height: #{jedi['height']}"
+        puts "Gender: #{jedi['gender']}" 
    end   
 
    def maul
     jedi= StarWarsAPI.new.get_sw_http(url(44))
     puts "Name: #{jedi['name']}"
-   puts "Born: #{jedi['birth_year']}"
-   puts "Height: #{jedi['height']}"
-   puts "Gender: #{jedi['gender']}" 
-end
+    puts "Born: #{jedi['birth_year']}"
+    puts "Height: #{jedi['height']}"
+    puts "Gender: #{jedi['gender']}" 
+    end
 end
 Character.new.list_character

@@ -1,6 +1,5 @@
 require 'nokogiri'
-require 'colorize'
-require 'area'
+require_relative 'characters'
 
 class CommandLineInterface
 
@@ -48,6 +47,7 @@ class CommandLineInterface
         else 
             puts "You can also type 'exit'"
         end 
+        binding.pry
     end
     
         def list_characters
@@ -66,5 +66,7 @@ class CommandLineInterface
 
         def goodbye
             puts "Thank you for stopping by our edge of the galaxy. May the force be with you."
+        end 
     end
+
  
