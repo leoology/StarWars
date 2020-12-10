@@ -1,116 +1,40 @@
 #building my characters
-require 'pry'
-require_relative 'star_wars_api'
-
+require_relative './star_wars_api.rb'
 class Character
-    def url(num)
+attr_accessor :name, :born, :height, :gender
+    @@all=[]
+    def initialize(name, born, height, gender)
+        @name=name
+        @born=born
+        @height=height
+        @gender=gender
+        @@all<<self
+    end
+    def self.url(num)
       "https://swapi.dev/api/people/#{num}/"
     end
 
-    
+    def self.list_character
 
-    def list_character
-        characters=[]
-    characters.each do |num| 
+(1..9).to_a.each do |num| 
         jedi= StarWarsAPI.new.get_sw_http(url(num))
-       #homeworld = StarWarsAPI.new.get_sw_http(jedi['homeworld'])
-        puts "Name: #{jedi['name']}"
-        puts "Born: #{jedi['birth_year']}"
-        puts "Height: #{jedi['height']}"
-        puts "Gender: #{jedi['gender']}"
-
-       # puts "Homeworld: #{b'name']}"
-
+        puts "Name: #{num}.#{jedi['name']}"
+        Character.new(jedi['name'], jedi['birth_year'],jedi['height'],jedi['gender'] )
         end
-        #binding.pry
+       
+    end 
+
+    def self.all
+        @@all
+    end
+
+    def to_s
+       "Name: #{@name}
+        Born: #{@born}
+        Height: #{@height}
+        Gender: #{@gender}"
     end 
  
-    def luke
-        jedi= StarWarsAPI.new.get_sw_http(url(1))
-        puts "Name: #{jedi['name']}"
-        puts "Born: #{jedi['birth_year']}"
-        puts "Height: #{jedi['height']}"
-        puts "Gender: #{jedi['gender']}" 
-    end
 
-    def darth_vader
-        jedi= StarWarsAPI.new.get_sw_http(url(4))
-        puts "Name: #{jedi['name']}"
-        puts "Born: #{jedi['birth_year']}"
-        puts "Height: #{jedi['height']}"
-        puts "Gender: #{jedi['gender']}" 
-    end
-
-    def yoda
-        jedi= StarWarsAPI.new.get_sw_http(url(20))
-        puts "Name: #{jedi['name']}"
-        puts "Born: #{jedi['birth_year']}"
-        puts "Height: #{jedi['height']}"
-        puts "Gender: #{jedi['gender']}" 
-    end
-
-    def chewie
-        jedi= StarWarsAPI.new.get_sw_http(url(13))
-        puts "Name: #{jedi['name']}"
-        puts "Born: #{jedi['birth_year']}"
-        puts "Height: #{jedi['height']}"
-        puts "Gender: #{jedi['gender']}" 
-    end
-
-    def obi_wan
-        jedi= StarWarsAPI.new.get_sw_http(url(10))
-        puts "Name: #{jedi['name']}"
-        puts "Born: #{jedi['birth_year']}"
-        puts "Height: #{jedi['height']}"
-        puts "Gender: #{jedi['gender']}" 
-        end
-
-    def han_solo
-        jedi= StarWarsAPI.new.get_sw_http(url(14))
-        puts "Name: #{jedi['name']}"
-        puts "Born: #{jedi['birth_year']}"
-        puts "Height: #{jedi['height']}"
-        puts "Gender: #{jedi['gender']}" 
-    end
-
-    def grievous
-        jedi= StarWarsAPI.new.get_sw_http(url(79))
-        puts "Name: #{jedi['name']}"
-        puts "Born: #{jedi['birth_year']}"
-        puts "Height: #{jedi['height']}"
-        puts "Gender: #{jedi['gender']}" 
-    end
-
-    def annie
-        jedi= StarWarsAPI.new.get_sw_http(url(11))
-        puts "Name: #{jedi['name']}"
-        puts "Born: #{jedi['birth_year']}"
-        puts "Height: #{jedi['height']}"
-        puts "Gender: #{jedi['gender']}" 
-    end
-
-    def darth_vader
-        jedi= StarWarsAPI.new.get_sw_http(url(4))
-        puts "Name: #{jedi['name']}"
-        puts "Born: #{jedi['birth_year']}"
-        puts "Height: #{jedi['height']}"
-        puts "Gender: #{jedi['gender']}" 
-    end
-
-    def man_who_got_skunked_by_darth_maul
-        jedi= StarWarsAPI.new.get_sw_http(url(11))
-        puts "Name: #{jedi['name']}"
-        puts "Born: #{jedi['birth_year']}"
-        puts "Height: #{jedi['height']}"
-        puts "Gender: #{jedi['gender']}" 
-   end   
-
-   def maul
-    jedi= StarWarsAPI.new.get_sw_http(url(44))
-    puts "Name: #{jedi['name']}"
-    puts "Born: #{jedi['birth_year']}"
-    puts "Height: #{jedi['height']}"
-    puts "Gender: #{jedi['gender']}" 
-    end
 end
-Character.new.list_character
+ Character.list_character

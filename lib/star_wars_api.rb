@@ -1,11 +1,8 @@
-require 'net/http'
-require 'json'
-require 'pry'
-require 'httparty'
+
 
 class StarWarsAPI
     def initialize
-        @url= "https://swapi.dev/api/"
+        @url= "https://swapi.dev/api/people"
     end
     #API for my star wars characters (doesn't have as many as I'd like ) :(
 
